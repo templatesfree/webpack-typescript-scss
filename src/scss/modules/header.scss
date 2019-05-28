@@ -1,0 +1,203 @@
+@import './modal';
+
+header {
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .top-nav {
+            display: flex;
+            li {
+                a {
+                    position: relative;
+                    padding: 20px 15px;
+                    color: $mnu-no-active-color;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    transition: all 0.5s ease;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: #ff9900;
+                        transition: all 0.5s ease;
+                    }
+                    &:hover {
+                        color: white;
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .loginBtn {
+            width: 125px;
+            padding: 20px 0;
+            color: white;
+            font-size: 12px;
+            text-transform: uppercase;
+            text-align: center;
+            background-color: $primary-color;
+            cursor: pointer;
+            svg{
+                max-width: 16px;
+                fill: white;
+                margin-right: 10px;
+            }
+        }
+    }
+    .header-wrapper2 {
+        display: flex;
+        align-items: center;
+        padding: 40px 0;
+        .logo {
+            width: 24%;
+            margin-right: 25px;
+        }
+        .call-actions-wrap {
+            justify-content: space-between;
+            align-self: flex-start;
+        }
+        .header-calls {
+            display: flex;
+            align-items: center;
+            .header-call {
+                font-weight: bold;
+                font-style: italic;
+                span {
+                    margin: 0 15px;
+                    color: black;
+                    font-size: 16px;
+                }
+            }
+            .header-action-call {
+                margin-left: 30px;
+                padding: 21px 35px;
+                background-color: $primary-color;
+                color: white;
+                font-size: 12px;
+                text-transform: uppercase;
+                img {
+                    margin-right: 5px;
+                    margin-bottom: -5px;
+                }
+            }
+        }
+        .header-actions {
+            display: flex;
+            .action-wrap {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0 30px;
+                border-right: solid 1px $border-action;
+                font-size: 10px;
+                text-transform: uppercase;
+                cursor: pointer;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+            .cart-value {
+                position: absolute;
+                top: -25px;
+                width: 21px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                color: white;
+                font-size: 11px;
+                &:before {
+                    position: absolute;
+                    content: '';
+                    width: 21px;
+                    height: 25px;
+                    left: 0;
+                    background: url('/assets/img/header/digits_bg.png');
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
+
+#toggle {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    display: none;
+    width: 28px;
+    height: 22px;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+#toggle span:after,
+#toggle span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+}
+#toggle span:after{
+    top: 18px;
+}
+#toggle span {
+    position: relative;
+    display: block;
+}
+
+#toggle span,
+#toggle span:after,
+#toggle span:before {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: 2px;
+}
+
+/* on activation */
+#toggle.on span {
+    background-color: transparent;
+}
+#toggle.on span:before {
+    transform: rotate(45deg) translate(0, 0);
+}
+#toggle.on span:after {
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+#toggle.on + #menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+#menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    padding: 10px;
+    background: black;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s;
+    z-index: 999;
+    li {
+        a {
+            display: block;
+            font-size: 18px;
+            padding: 10px 0;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,247 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/custom-select";
+@import "./modules/header";
+@import "./modules/sidebar";
+@import "./modules/search";
+@import "./modules/tabs";
+@import "./modules/card";
+@import "./modules/footer";
+@import "./utils/media";
+
+* {
+  outline: none;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+html {
+  line-height: $mainLineHeight;
+	font-size: $mainFontSize;
+	color: $mainFontColor;
+  height: 100%;
+  @media screen and (max-width: $desktopWidth) {
+		font-size: 16px;
+  }
+  @media screen and (max-width: $tableWidth) {
+		font-size: 15px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+		font-size: 14px;
+  }
+}
+
+body {
+  font-family: $mainFont;
+	font-family: $mainFontSize;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after { box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+
+a {
+	text-decoration: none;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+section, .section {
+  position: relative;
+  padding: 40px 0;
+  @media screen and (max-width: $desktopWidth) {
+    padding: 36px 0;
+  }
+  @media screen and (max-width: $desktopWidth) {
+    padding: 28px 0;
+  }
+  @media screen and (max-width: $desktopWidth) {
+    padding: 20px 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  flex: 0 0 auto;
+  position: relative;
+  max-width: $desktopWidth;
+  margin: 0 auto;
+  @media screen and (max-width: $smDesktopWidth) {
+    max-width: tableWidth;
+  }
+  @media screen and (max-width: $tableWidth) {
+    max-width: phoneWidth;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    max-width: smPhoneWidth;
+  }
+}
+
+.col-sm {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.fieldset {
+  position: relative;
+  margin: 1.4em 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+      }
+      label {
+          font-size: 14px;
+          font-weight: 600;
+      }
+}
+
+label {
+  &.image-replace {
+    /* replace text with an icon */
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    height: 20px;
+    width: 20px;
+
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    color: transparent;
+    text-shadow: none;
+
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+  }
+}
+
+input {
+  margin: 0;
+  padding: 0;
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.has-padding {
+          padding: 10px 10px;
+          margin-top: 10px;
+  }
+
+  &.has-error {
+    border: 1px solid $danger-color;
+  }
+
+  &[type=submit] {
+    padding: 16px 0;
+    cursor: pointer;
+    background: $login-color;
+    color: #FFF;
+    font-weight: bold;
+    border: none;
+
+    .no-touch &:hover, .no-touch &:focus {
+      background: lighten($login-color, 5%);
+      outline: none;
+    }
+  }
+}
+
+.accent-btn {
+  background-color: $primary-color;
+  color: white;
+  border: solid 0px;
+  cursor: pointer;
+}
+
+.btn-main {
+  padding: 15px 35px;
+  color: white;
+  border: solid 0px;
+  cursor: pointer;
+}
+
+.callback-btn {
+  padding: 10px 45px;
+}
+
+.action-clear {
+  background-color: $danger-color;
+}
+
+.btn-gradient-accent {
+  background: rgb(255,133,0);
+  background: -moz-linear-gradient(left, rgba(255,133,0,1) 0%, rgba(255,174,0,1) 100%);
+  background: -webkit-linear-gradient(left, rgba(255,133,0,1) 0%,rgba(255,174,0,1) 100%);
+  background: linear-gradient(to right, rgba(255,133,0,1) 0%,rgba(255,174,0,1) 100%);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  &:hover {
+    background: $primary-color;
+  }
+}
+
+
+.top-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right-column {
+  display: flex;
+  align-content: flex-start;
+  width: 74%;
+}
+
+.big-font-btn {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 16px;
+}
+
+.border-orange {
+  position: relative;
+  &:before {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $primary-color;
+  } 
+}
+.content-column {
+  flex-direction: column;
+}

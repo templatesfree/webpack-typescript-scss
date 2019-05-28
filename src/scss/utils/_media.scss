@@ -1,0 +1,245 @@
+
+@media (max-width: 1250px) {
+    .sidebar, .right-column {
+        width: 100%;
+    }
+	.sidebar {
+        margin-right: 0;
+        .sidebar-header {
+            margin-bottom: 30px;
+        }
+        .sidebar-mnu {
+            max-height: 0;
+            overflow: hidden;
+            &.open {
+                max-height: 100%;
+                transition: max-height 0.15s ease-in-out;
+            }
+        }
+    }
+}
+
+@media (max-width: 1122px) {
+    header {
+        .header-wrapper2 {
+            .header-calls {
+                .header-call {
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) and (max-width: 1050px) {
+    header {
+        .header-wrapper2 {
+            .header-calls {
+                width: 100%;
+                background: none !important;
+                justify-content: center;
+                .header-call {
+                    display: none;
+                }
+
+                .header-action-call {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    header {
+        .header-wrapper2 {
+            .header-calls {
+                .header-action-call {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .card-items .card-item {
+        width: 33%;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (max-width: 991px) {
+    // 
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .modal-container {
+        flex-direction: column;
+    }
+
+    .modal, .modal-callback {
+        align-items: flex-start;
+    }
+
+    #social-login {
+        margin: 0;
+        padding: 0;
+        border-left: none;
+    }
+
+    #toggle {
+        display: block;
+    }
+
+    header {
+        .header-wrapper {
+            .top-nav {
+                display: none;
+            }
+        }
+        .header-wrapper2 {
+            padding: 15px 0;
+            flex-direction: column;
+            .header-calls {
+                .header-call {
+                    display: none;
+                }
+
+                .header-action-call {
+                    margin-left: 0;
+                }
+            }
+            .logo {
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .call-actions-wrap {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                > div {
+                    margin: 15px 0;
+                }
+            }
+        }
+    }
+
+    .tab-header {
+        width: 100%;
+        .tab-header-action {
+            width: 100%;
+            text-align: center;
+            &.d_active {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .footer {
+        padding: 0 15px;
+        .wrap-columns, .copyright  {
+            flex-direction: column;
+        }
+
+        .wrap-columns {
+            > div {
+                margin: 30px 0;
+            }
+            .footer-column1,
+            .footer-column2,
+            .footer-column3,
+            .footer-column4,
+            .footer-column5 {
+                width: 100%;
+            }
+        }
+
+        .copyright {
+            align-items: center;
+            > div {
+                margin-bottom: 30px;
+            }
+        }
+        
+    }
+}
+
+@media (min-width: 767px) {
+    #toggle {
+        display: none;
+    }
+
+    #menu {
+        display: block;
+    }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+    .search-form .search-input {
+        height: auto;
+    }
+    .search-btn {
+        position: relative;
+    }
+
+    .items-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        .title-card {
+            width: 100%;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+        
+        .tab-foot-action {
+            flex-direction: column;
+        }
+    }
+
+    .btn-main {
+        justify-content: center;
+    }
+
+    .footer {
+        .wrap-columns {
+            margin-bottom: 10px;
+            > div {
+                margin: 15px 0;
+            }
+        }
+    
+        .copyright {
+            > div {
+                margin-bottom: 15px;
+            }
+            .copy-block {
+                flex-direction: column;
+                img {
+                    margin: 0;
+                }
+
+                .dev {
+                    padding: 0 !important;
+                    text-align: center;
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @media (max-width: 360px) {
+    
+// }

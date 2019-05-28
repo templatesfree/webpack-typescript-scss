@@ -1,0 +1,128 @@
+.sidebar {
+    width: 24%;
+    margin-right: 25px;
+    .sidebar-header {
+        position: relative;
+        display: flex;
+        padding: 21px 80px;
+        background: rgb(255,133,0);
+        background: -moz-linear-gradient(left, rgba(255,133,0,1) 0%, rgba(255,174,0,1) 100%);
+        background: -webkit-linear-gradient(left, rgba(255,133,0,1) 0%,rgba(255,174,0,1) 100%);
+        background: linear-gradient(to right, rgba(255,133,0,1) 0%,rgba(255,174,0,1) 100%);
+        color: white;
+        font-size: 20px;
+        line-height: 20px;
+        .burger-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 60px;
+            cursor: pointer;
+            background-color: $orange;
+        }
+        .burger-container .burger-toggle {
+            width: 18px;
+            height: 8px;
+            position: relative;
+            display: block;
+            margin: -4px auto 0;
+            top: 50%;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            &.open {
+                .bar {
+                    width: 100% !important;
+                }
+            }
+          }
+          .burger-container .burger-toggle .bar {
+            width: 100%;
+            height: 2px;
+            display: block;
+            position: relative;
+            background: #FFF;
+            transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+            transition-delay: 0s;
+          }
+          .burger-container .burger-toggle .bar.topBar {
+              width: 10px;
+            -webkit-transform: translateY(0px) rotate(0deg);
+                    transform: translateY(0px) rotate(0deg);
+          }
+          .burger-container .burger-toggle .bar.middleBar {
+            width: 15px;
+            -webkit-transform: translateY(3px) rotate(0deg);
+                    transform: translateY(3px) rotate(0deg);
+          }
+          .burger-container #burger .bar.btmBar {
+            width: 8px;
+            -webkit-transform: translateY(6px) rotate(0deg);
+                    transform: translateY(6px) rotate(0deg);
+          }
+    }
+    .sidebar-mnu {
+        max-height: 100%;
+        transition: max-height 0.15s ease-in-out;
+        &.open {
+            max-height: 0;
+            overflow: hidden;
+        }
+        li {
+            border-bottom: solid 1px $border-mnu;
+            border-right: solid 1px $border-mnu;
+            border-left: solid 1px $border-mnu;
+            transition: all 200ms;
+            a {
+                position: relative;
+                display: block;
+                padding: 16px 30px;
+                text-transform: uppercase;
+                color: $mainFontColor;
+                font-weight: bold;
+                .image-arrow {
+                    position: absolute;
+                    top: 50%;
+                    right: 30px;
+                    transform: translateY(-50%);
+                    transition: all 0.2s ease;
+                    &.open {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            .dropdown-menu {
+                overflow: hidden;
+                height: 0;
+            }
+            &.active {
+                > a {
+                    color: $primary-color;
+                    font-weight: bold;
+                    >.image-arrow {
+                        transition: all ease 0.2s;
+                        transform: rotate(90deg);    
+                    }
+                }
+                >.dropdown-menu {
+                    display: block;
+                    height: auto;
+                    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+                    transition: all 200ms;
+                    > li {
+                        > a {
+                            font-size: 14px;
+                            font-weight: normal;
+                        }
+                    }
+                }
+             }
+        }
+    }
+}

@@ -1,0 +1,132 @@
+// footer style
+.footer {
+    background-color: $gray-color;
+    color: white;
+    padding: 35px 0 5px 0;
+    .wrap-columns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        .footer-column {
+            overflow: hidden;
+        }
+        .footer-title {
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 20px;
+            color: $footer-title-color;
+        }
+        .footer-column1 {
+            width: 40%;
+        }
+        .footer-column2 {
+            width: 15%;
+        }
+        .footer-column3 {
+            width: 15%;
+        }
+        .footer-column4 {
+            width: 15%;
+        }
+    }
+    .news-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: $footer-title-color;
+        text-transform: uppercase;
+    }
+    .subscribe-tite {
+        font-size: 26px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
+.border-title {
+    position: relative;
+    &:after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $foote-border-titel;
+    }
+}
+
+.subscribe-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+}
+.subscribe-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px 20px;
+}
+
+.footer-mnu {
+    li {
+        a {
+            display: block;
+            color: white;
+            font-size: 13px;
+            text-decoration: underline;
+            padding-bottom: 15px;
+        }
+    }
+}
+
+.subscribe-form {
+    position: relative;
+    overflow: hidden;
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    border-top: solid 1px $foote-border-titel;
+}
+.copy-block {
+    display: flex;
+    align-items: center;
+    img {
+        position: relative;
+        margin-right: 25px;
+    }
+    .dev {
+        position: relative;
+        padding: 10px 0 10px 25px;
+        &:before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background-color: #787878;
+        }
+    }
+}
+
+.copy-social {
+    display: flex;
+    .soc-ico {
+        position: relative;
+        padding: 20px;
+        border: solid 1px $social-border;
+        margin-right: 10px;
+        &:hover {
+            border: solid 1px $yellow-color ;
+        }
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
