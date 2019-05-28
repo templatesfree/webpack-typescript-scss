@@ -14,5 +14,5 @@ $ npm run build
 ### Note
 
 ```
-Если стили слетели, нужно в webpack.base.conf.js файле, изменить "publicPath";
+If the styles are gone, you need in the webpack.base.conf.js file, change the "publicPath";
 ```
